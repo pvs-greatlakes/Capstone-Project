@@ -1,0 +1,330 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<br>
+	<p style="font-size:30px ; color:red ; text-align:center"> Prediction of a patient's LOS in a hospital </p>
+	<br> <br>
+
+	<!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+		
+        <form action="\predict" method="post" autocomplete="off">
+		
+		<br>
+			<p style="font-size:30px ; color:blue">Hospital Info</p>
+			<br>
+			
+			<div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hospital code</h5>
+                            <select name="Hospital_code" id="Hospital_code" required="required">
+							<option value="none" selected disabled hidden> - Select - </option> 
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hospital_type_code</h5>
+                            <select name="Hospital_type_code" id="Hospital_type_code" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="d">f</option>
+                                <option value="e">g</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+							<h5 class="card-title">City Code Hospital</h5>
+                            <select name="City_Code_Hospital" id="City_Code_Hospital" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="6">9</option>
+                                <option value="7">10</option>
+                                <option value="6">11</option>
+                                <option value="7">13</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+							<h5 class="card-title">Hospital region code</h5>
+                            <select name="Hospital_region_code" id="Hospital_region_code" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="X">X</option>
+                                <option value="Y">Y</option>
+                                <option value="Z">Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+			<br><br>
+			<p style="font-size:30px ; color:blue">Patient Info</p>
+			<br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <h5 class="card-title">Age</h5>
+                            <select name="Age" id="Age" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="0-10">0-10</option>
+                                <option value="11-20">11-20</option>
+                                <option value="21-30">21-30</option>
+                                <option value="31-40">31-40</option>
+                                <option value="41-50">41-50</option>
+                                <option value="51-60">51-60</option>
+                                <option value="61-70">61-70</option>
+                                <option value="71-80">71-80</option>
+                                <option value="81-90">81-90</option>
+                                <option value="91-100">91-100</option>
+                            </select>   
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <h5 class="card-title">Department</h5>
+                            <select name="Department" id="Department" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="gynecology">gynecology</option>
+                                <option value="anesthesia">anesthesia</option>
+                                <option value="radiotherapy">radiotherapy</option>
+                                <option value="TB & Chest disease">TB & Chest disease</option>
+                                <option value="surgery">surgery</option>
+                            </select>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <h5 class="card-title">Type of Admission</h5>
+                            <select name="Type_of_Admission" id="Type_of_Admission" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="Trauma">Trauma</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Emergency">Emergency</option>
+                            </select>  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <h5 class="card-title">Severity of Illness</h5>
+                            <select name="Severity_of_Illness" id="Severity_of_Illness" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="Minor">Minor</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Extreme">Extreme</option>
+                            </select>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+							<h5 class="card-title">City Code Patient</h5>
+                            <select name="City_Code_Patient" id="City_Code_Patient" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<br>
+			
+			<input type="text" size='34' name="Visitors_with_Patient" placeholder=" Visitors with Patient  (generally 1-10)" required="required" /> <br><br>
+    		<input type="text" size='36' name="Admission_Deposit" placeholder="Admission Deposit  (generally 2000-8000)" required="required" /> <br><br>
+			
+			<br><br>
+			<p style="font-size:30px ; color:blue">Operational Info</p>
+			<br>
+			
+			<div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ward Type</h5>
+                            <select name="Ward_Type" id="Ward_Type" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="P">P</option>
+                                <option value="Q">Q</option>
+                                <option value="R">R</option>
+                                <option value="S">S</option>
+                                <option value="T">T</option>
+                                <option value="U">U</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+                            <h5 class="card-title">Ward Facility Code</h5>
+                            <select name="Ward_Facility_Code" id="Ward_Facility_Code" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			
+			<div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bed Grade</h5>
+                            <select name="Bed_Grade" id="Bed_Grade" required="required">
+							<option value="none" selected disabled hidden> - Select - </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <input type="text" size='34' name="Available_Extra_Rooms" placeholder="Available Extra Rooms  (generally 1-8)" required="required" /> <br><br>
+            
+            <br><br>
+
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <!-- Signature -->
+        <br>
+        <p style="font-size:20px ; color:red ; text-align:center"> © Debesh Das</p>
+		<p style='text-align:center'>
+		<a href="https://github.com/debesh26/Capstone-Project" target="_blank"><img border="0" alt="Github" src="../static/logo-github.png" width="70" height="65"></a> &nbsp 
+		<a href="https://www.linkedin.com/in/debesh-das/" target="_blank"><img border="0" alt="Linkedin" src="../static/logo-linkedin.png" width="80" height="50"></a>
+		</p>
+		<br>
+
+    </div>
+   
+</body>
+
+</html>
